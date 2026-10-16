@@ -1,0 +1,290 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0c1424;
+    color: #e8eef8;
+    line-height: 1.6;
+}
+
+header {
+    padding: 22px 8%;
+    background: #111d31;
+    border-bottom: 1px solid #293950;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #55d6be;
+}
+
+header p {
+    color: #a8b8cc;
+    font-size: 14px;
+}
+
+main {
+    max-width: 850px;
+    width: 90%;
+    margin: 35px auto;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.intro h1 {
+    font-size: clamp(28px, 5vw, 40px);
+    color: #55d6be;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: #b1bfd1;
+}
+
+.abas {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.aba {
+    flex: 1;
+    padding: 13px;
+    border: 1px solid #34455d;
+    background: #172338;
+    color: white;
+    border-radius: 9px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.aba.ativa {
+    background: #55d6be;
+    color: #0c1424;
+    border-color: #55d6be;
+}
+
+.painel {
+    padding: 28px;
+    background: #131f33;
+    border: 1px solid #293950;
+    border-radius: 15px;
+    margin-bottom: 28px;
+}
+
+.painel h2 {
+    color: #55d6be;
+    margin-bottom: 6px;
+}
+
+.painel > p {
+    color: #a8b8cc;
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    margin: 16px 0 8px;
+    font-size: 14px;
+}
+
+.linha {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.linha input {
+    flex: 1;
+    accent-color: #55d6be;
+}
+
+#valorTamanho {
+    color: #55d6be;
+    font-weight: bold;
+    min-width: 25px;
+}
+
+.opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5px 15px;
+    margin: 20px 0;
+}
+
+.opcoes label {
+    margin: 5px 0;
+}
+
+.opcoes input {
+    accent-color: #55d6be;
+    margin-right: 6px;
+}
+
+.principal {
+    width: 100%;
+    background: #55d6be;
+    color: #0c1424;
+    border: none;
+    border-radius: 8px;
+    padding: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 12px 0 16px;
+}
+
+.principal:hover {
+    background: #8aefdc;
+}
+
+.resultado {
+    display: flex;
+    gap: 8px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    background: #0c1424;
+    color: #e8eef8;
+    border: 1px solid #34455d;
+    padding: 13px;
+    border-radius: 8px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+.resultado input {
+    min-width: 0;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;
+    overflow-wrap: anywhere;
+    margin-bottom: 10px;
+}
+
+.copiar {
+    background: #263850;
+    color: white;
+    border: 1px solid #425571;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.copiar:hover {
+    background: #354c68;
+}
+
+.mensagem {
+    margin-top: 15px;
+    padding: 12px;
+    background: #0c1424;
+    border-radius: 8px;
+    color: #55d6be;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.nota {
+    margin-top: 15px;
+    font-size: 12px;
+    color: #93a5bb;
+}
+
+.aviso {
+    margin-top: 20px;
+    padding: 15px;
+    background: #302b1d;
+    border-left: 4px solid #e6bd60;
+    color: #f4dfab;
+    font-size: 13px;
+    border-radius: 5px;
+}
+
+.escondido {
+    display: none;
+}
+
+.explicacao {
+    margin-top: 40px;
+}
+
+.explicacao h2 {
+    color: #55d6be;
+    margin-bottom: 18px;
+}
+
+.explicacao article {
+    background: #131f33;
+    padding: 20px;
+    border: 1px solid #293950;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+.explicacao h3 {
+    margin-bottom: 6px;
+}
+
+.explicacao p {
+    color: #b1bfd1;
+    font-size: 14px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #93a5bb;
+    background: #111d31;
+    font-size: 13px;
+}
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #55d6be;
+    outline-offset: 3px;
+}
+
+@media (max-width: 550px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .painel {
+        padding: 20px 15px;
+    }
+
+    .opcoes {
+        grid-template-columns: 1fr;
+    }
+
+    .resultado {
+        flex-direction: column;
+    }
+
+    .copiar {
+        padding: 12px;
+    }
+}

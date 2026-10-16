@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecurePass | Gerador de Senhas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header>
+    <div class="logo">🔐 Secure<span>Pass</span></div>
+    <p>Crie senhas e conheça a criptografia</p>
+</header>
+
+<main>
+    <section class="intro">
+        <h1>Proteja suas informações</h1>
+        <p>Gere senhas aleatórias ou crie um hash SHA-256 para estudar como funciona a segurança digital.</p>
+    </section>
+
+    <div class="abas">
+        <button class="aba ativa" data-tela="gerador">Gerar senha</button>
+        <button class="aba" data-tela="hash">Hash SHA-256</button>
+    </div>
+
+    <section class="painel" id="gerador">
+        <h2>🔑 Gerador de senhas</h2>
+        <p>Personalize sua senha aleatória.</p>
+
+        <label for="tamanho">Tamanho da senha</label>
+        <div class="linha">
+            <input type="range" id="tamanho" min="8" max="64" value="16">
+            <span id="valorTamanho">16</span>
+        </div>
+
+        <div class="opcoes">
+            <label><input type="checkbox" id="maiusculas" checked> Letras maiúsculas (A-Z)</label>
+            <label><input type="checkbox" id="minusculas" checked> Letras minúsculas (a-z)</label>
+            <label><input type="checkbox" id="numeros" checked> Números (0-9)</label>
+            <label><input type="checkbox" id="simbolos" checked> Símbolos (!@#$...)</label>
+        </div>
+
+        <button class="principal" id="gerar">Gerar senha aleatória</button>
+
+        <label for="resultadoSenha">Sua senha</label>
+        <div class="resultado">
+            <input type="text" id="resultadoSenha" readonly placeholder="Sua senha aparecerá aqui">
+            <button class="copiar" id="copiarSenha">Copiar</button>
+        </div>
+
+        <div id="forca" class="mensagem" aria-live="polite">
+            Gere uma senha para ver a análise.
+        </div>
+
+        <p class="nota">A senha é gerada no navegador e não é enviada a um servidor por este código.</p>
+    </section>
+
+    <section class="painel escondido" id="hash">
+        <h2>🛡️ Gerador de hash SHA-256</h2>
+        <p>Digite um texto para gerar seu resumo criptográfico.</p>
+
+        <label for="textoHash">Texto ou senha</label>
+        <input type="text" id="textoHash" placeholder="Digite um texto">
+
+        <button class="principal" id="gerarHash">Gerar hash SHA-256</button>
+
+        <label for="resultadoHash">Resultado hexadecimal</label>
+        <textarea id="resultadoHash" readonly placeholder="O hash aparecerá aqui"></textarea>
+
+        <button class="copiar" id="copiarHash">Copiar hash</button>
+
+        <div class="aviso">
+            <strong>Importante:</strong> SHA-256 é uma função de hash, não uma criptografia reversível.
+            Não use este exemplo para armazenar senhas reais. Sistemas profissionais
+            usam algoritmos próprios para senhas, como Argon2id, com salt e parâmetros adequados.
+        </div>
+    </section>
+
+    <section class="explicacao">
+        <h2>Qual é a diferença?</h2>
+
+        <article>
+            <h3>🔑 Senha normal</h3>
+            <p>É uma sequência de caracteres que você pode usar para entrar em uma conta. O gerador cria uma sequência aleatória; ele não a criptografa automaticamente.</p>
+        </article>
+
+        <article>
+            <h3>🔐 Hash criptográfico</h3>
+            <p>Transforma o texto em uma sequência de tamanho fixo. O processo é projetado para não permitir recuperar diretamente o texto original.</p>
+        </article>
+
+        <article>
+            <h3>🔒 Criptografia verdadeira</h3>
+            <p>Usa uma chave para transformar os dados e, quando o algoritmo e a chave permitem, recuperar o conteúdo original por meio da descriptografia.</p>
+        </article>
+    </section>
+</main>
+
+<footer>
+    SecurePass — Projeto educativo de segurança digital
+</footer>
+
+</body>
+</html>
